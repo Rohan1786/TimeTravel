@@ -1,53 +1,106 @@
-// import React from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
-// const Navbar = () => {
-//   return (
-//     <div>
-//         <header class="bg-blue-600 py-6">
-//         <div class="container mx-auto flex justify-between items-center px-4">
-            
-//             <div class="flex items-center space-x-3">
-//                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScTt3-QsjSZjgDdDtIQrYST7Oc0IKwtt1MgA&s" alt="Logo" class="w-12 h-12 rounded-lg"/>
-//                 <span class="text-white text-2xl font-bold">Brand</span>
-//             </div>
-          
-//             <nav class="space-x-6">
-//                 <a href="/" class="text-white hover:text-gray-300">Home</a>
-//                 <a href="shop" class="text-white hover:text-gray-300">Shop</a>
-//                 <a href="about" class="text-white hover:text-gray-300">About</a>
-//                 <a href="contact" class="text-white hover:text-gray-300">Contact</a>
-//                 <a href="login" class="text-white hover:text-gray-300">Login</a>
-//                 <a href="register" class="bg-pink-500 hover:bg-pink-600 text-white px-4 py-2 rounded-lg">Sign Up</a>
-//             </nav>
-//         </div>
-        
-//     </header>
-//     </div>
-//   )
-// }
-
-// export default Navbar
-
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Services from '../Services'
-import About from '../About'
-import Home from '../Home'
-
-
-const Navbar = () => {
+function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='flex rounded justify-center'>
-<div className='flex justify-between'>
-  <ul>
-    <Link to='/'>Home</Link>
-    <Link to='/Services'>Services</Link>
-    <Link to='/About'>About</Link>
-  </ul>
-</div>
-    </div>
-  )
+    <nav className="bg-gray-800 p-4 shadow-lg">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* Logo or Brand Name */}
+        <div className="text-white text-2xl font-bold">
+          <Link to="/">Timing Machine</Link>
+        </div>
+
+        {/* Menu Items (Desktop) */}
+        <div className="hidden md:flex space-x-6">
+          <Link
+            to="/"
+            className="text-gray-300 hover:text-white text-lg transition-colors duration-200"
+          >
+            Home
+          </Link>
+          <Link
+            to="/About"
+            className="text-gray-300 hover:text-white text-lg transition-colors duration-200"
+          >
+            About
+          </Link>
+          <Link
+            to="/Services"
+            className="text-gray-300 hover:text-white text-lg transition-colors duration-200"
+          >
+            Services
+          </Link>
+          <Link
+            to="/Contact"
+            className="text-gray-300 hover:text-white text-lg transition-colors duration-200"
+          >
+            Contact
+          </Link>
+        </div>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden">
+          <button
+            type="button"
+            className="text-white focus:outline-none"
+            aria-label="Menu"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            <svg
+              className="w-8 h-8"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Dropdown Menu */}
+      {isOpen && (
+        <div className="md:hidden mt-4">
+          <Link
+            to="/"
+            className="block text-gray-300 hover:text-white py-2 text-lg"
+            onClick={() => setIsOpen(false)}
+          >
+            Home
+          </Link>
+          <Link
+            to="/About"
+            className="block text-gray-300 hover:text-white py-2 text-lg"
+            onClick={() => setIsOpen(false)}
+          >
+            About
+          </Link>
+          <Link
+            to="/Services"
+            className="block text-gray-300 hover:text-white py-2 text-lg"
+            onClick={() => setIsOpen(false)}
+          >
+            Services
+          </Link>
+          <Link
+            to="/Contact"
+            className="block text-gray-300 hover:text-white py-2 text-lg"
+            onClick={() => setIsOpen(false)}
+          >
+            Contact
+          </Link>
+        </div>
+      )}
+    </nav>
+  );
 }
 
-export default Navbar
+export default Navbar;
