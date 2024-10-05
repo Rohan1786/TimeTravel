@@ -3,12 +3,13 @@ import Navbar from './Components/Navbar/Navbar'
 import { BrowserRouter,Routes,Route} from "react-router-dom";
 import Home from './Components/Home/Home';
 import About from './Components/About/About';
-import Services from './Components/Services/Services';
+
+import Contact from './Components/Contact/Contact';
 
 
 
 const App = () => {
- 
+
   const [user, setuser] = useState("");
   const getUser=()=>{
     setuser("Rohan");
@@ -23,9 +24,10 @@ const App = () => {
       <BrowserRouter>
       <Routes>
       <Route path='/' element={<Home />}/>
-      <Route path='/Navbar' element={<Navbar/>}></Route>
+      
       <Route path='/About' element={<About/>}></Route>
-      <Route path='/Services' element={<Services/>}></Route>
+    
+      <Route path='/Contact' element={<Contact/>}></Route>
         </Routes>
         </BrowserRouter>
     </>
