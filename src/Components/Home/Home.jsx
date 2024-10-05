@@ -50,17 +50,17 @@ function Home() {
         <section className="py-12 bg-gray-100">
           <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center px-4 sm:px-6 lg:px-8">
             <div className="shadow-lg p-6 rounded-lg bg-white" data-aos="fade-right">
-              <img src="https://cdn.pixabay.com/photo/2017/03/24/08/21/time-2168234_960_720.jpg" alt="Time Control" className="mx-auto w-24 h-24 sm:w-32 sm:h-32" />
+              <img src="https://static.vecteezy.com/system/resources/thumbnails/024/060/602/small_2x/time-traveler-s-journey-a-traveler-with-packed-suitcase-stands-before-a-giant-illuminated-clock-face-like-a-time-portal-ai-generated-free-photo.jpg" alt="Time Control" className=" rounded mx-auto w-24 h-24 sm:w-32 sm:h-32" />
               <h3 className="text-xl sm:text-2xl font-semibold text-blue-600 mt-4">Time Control</h3>
               <p className="mt-4 text-gray-600">Manipulate time effortlessly with our cutting-edge technology.</p>
             </div>
             <div className="shadow-lg p-6 rounded-lg bg-white" data-aos="fade-up">
-              <img src="https://cdn.pixabay.com/photo/2016/09/09/20/48/time-travel-1659694_960_720.jpg" alt="Fast Travel" className="mx-auto w-24 h-24 sm:w-32 sm:h-32" />
+              <img src="https://img.freepik.com/free-photo/glowing-sky-sphere-orbits-starry-galaxy-generated-by-ai_188544-15599.jpg" alt="Fast Travel" className=" rounded mx-auto w-24 h-24 sm:w-32 sm:h-32" />
               <h3 className="text-xl sm:text-2xl font-semibold text-blue-600 mt-4">Fast Travel</h3>
               <p className="mt-4 text-gray-600">Move between different eras instantly. Be where you need to be, when you need to be.</p>
             </div>
             <div className="shadow-lg p-6 rounded-lg bg-white" data-aos="fade-left">
-              <img src="https://cdn.pixabay.com/photo/2015/06/01/22/15/fantasy-793758_960_720.jpg" alt="Predict the Future" className="mx-auto w-24 h-24 sm:w-32 sm:h-32" />
+              <img src="https://res.cloudinary.com/momentum-media-group-pty-ltd/image/upload/c_fill,q_auto:best,f_auto,e_unsharp_mask:80,w_830,h_478/Space%20Connect%2Fspace-exploration-sc_fm1ysf" alt="Predict the Future" className=" rounded mx-auto w-24 h-24 sm:w-32 sm:h-32" />
               <h3 className="text-xl sm:text-2xl font-semibold text-blue-600 mt-4">Predict the Future</h3>
               <p className="mt-4 text-gray-600">Foresee events and plan your life with unprecedented accuracy.</p>
             </div>
