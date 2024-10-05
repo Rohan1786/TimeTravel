@@ -33,9 +33,9 @@ function Home() {
     <>
       <div className="bg-gray-100 text-gray-700">
         {/* Navbar */}
-        <div className={`fixed w-full top-0 z-50 transition-transform duration-500 ${isNavbarVisible ? 'translate-y-0' : '-translate-y-full'}`}>
-          <Navbar />
-        </div>
+       
+  <Navbar />
+
 
         {/* Hero Section */}
         <section className="py-16 bg-gradient-to-r from-blue-400 to-purple-600 text-white text-center">

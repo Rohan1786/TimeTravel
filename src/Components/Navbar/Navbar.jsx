@@ -26,7 +26,6 @@ function Navbar() {
           >
             About
           </Link>
-         
           <Link
             to="/Contact"
             className="text-white hover:text-yellow-400 text-lg transition-all duration-300"
@@ -85,7 +84,6 @@ function Navbar() {
         >
           About
         </Link>
-       
         <Link
           to="/Contact"
           className="block text-white hover:bg-indigo-700 py-2 text-lg transition-colors duration-300"
