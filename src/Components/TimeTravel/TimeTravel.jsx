@@ -152,21 +152,50 @@ function TimeTravel() {
     fetchNews(selectedDate);
   };
 
-  const fetchNews = async (date) => {
-    const apiKey = 'cc47a8f631bc45a081be61dcce32bfb3'; // Replace with your News API key
-    const formattedDate = new Date(date).toISOString().split('T')[0]; // Format date as YYYY-MM-DD
-    setLoading(true); // Set loading state
-    setError(null); // Reset error
+  // const fetchNews = async (date) => {
+  //   const apiKey = 'cc47a8f631bc45a081be61dcce32bfb3'; // Replace with your News API key
+  //   const formattedDate = new Date(date).toISOString().split('T')[0]; // Format date as YYYY-MM-DD
+  //   setLoading(true); // Set loading state
+  //   setError(null); // Reset error
 
+  //   try {
+  //     // Fetch news with specific keywords related to planets and humanity
+  //     const response = await fetch(
+  //       `https://newsapi.org/v2/everything?q=(planets OR humanity OR humans OR space OR science)&from=${formattedDate}&to=${formattedDate}&sortBy=popularity&apiKey=${apiKey}`
+  //     );
+  //     const data = await response.json();
+
+  //     if (data.articles.length > 0) {
+  //       // Limit to only 5 articles
+  //       setNews(data.articles.slice(0, 5));
+  //     } else {
+  //       setNews([]);
+  //       setError('No news articles available for this date.');
+  //     }
+  //   } catch (error) {
+  //     setNews([]);
+  //     setError("Sorry, we couldn't fetch news for this date. Please try again later.");
+  //   }
+  //   setLoading(false); // Stop loading
+  // };
+  const fetchNews = async (date) => {
+    const apiKey = 'cc47a8f631bc45a081be61dcce32bfb3'; // Use the environment variable
+    const formattedDate = new Date(date).toISOString().split('T')[0];
+    
+    setLoading(true);
+    setError(null);
+  
     try {
-      // Fetch news with specific keywords related to planets and humanity
       const response = await fetch(
         `https://newsapi.org/v2/everything?q=(planets OR humanity OR humans OR space OR science)&from=${formattedDate}&to=${formattedDate}&sortBy=popularity&apiKey=${apiKey}`
       );
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
       const data = await response.json();
-
       if (data.articles.length > 0) {
-        // Limit to only 5 articles
         setNews(data.articles.slice(0, 5));
       } else {
         setNews([]);
@@ -175,10 +204,11 @@ function TimeTravel() {
     } catch (error) {
       setNews([]);
       setError("Sorry, we couldn't fetch news for this date. Please try again later.");
+    } finally {
+      setLoading(false);
     }
-    setLoading(false); // Stop loading
   };
-
+  
   return (
     <div className="p-4 md:p-6 bg-blue-50 rounded-lg text-center max-w-lg mx-auto">
       <h2 className="text-xl md:text-2xl font-bold text-blue-700">Time Travel</h2>
